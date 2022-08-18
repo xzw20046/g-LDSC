@@ -25,7 +25,7 @@ To convert your GWAS result in such format, you could use ```munge_sumstats.py``
 This file contains the information of LD matrix and annotation information, to get this file, see tutorial of **Calculate LD score matrix** in the futher section.
 ## g-LDSC function file
 The R file ```functions.R``` that contain all g-LDSC functions.
-## Usage
+# Usage
 ## Calculate LD score matrix
 To calculate LD score matrix you could use the command shown as follow:
 ```
@@ -45,3 +45,31 @@ cores=4
 ## Output of LD score matrix calculation
 This function will output a file called ```LDSM.pannel.Rdata```. The size of this output file is approximately 10GB.
 
+## Estimate heritability and functional enrichment
+You could use the command shown as follow:
+```
+Rscript gldsc.run.R \
+panel=LDSM.pannel.Rdata \
+gwas=BMI.sumstats \
+function=mlfun.R \
+out=/your out path/BMI \
+cores=4 
+```
+## Out put of heritability and functional enrichment estimation
+The output of this process will return a data frame with rows represent the result of each functional annotation and columns shown as follow:
+```
+Taus  Partition_H2  Partition_H2_SD  Enrichment  Enrichment_SD  intercept  intercept_SD  e.stat  P  tau_SD   
+```
+- ```Taus``` annotation contributor
+- ```Taus_SD``` standard error of annotation contributor
+- ```Partition_H2``` partitioned SNP-heritability
+- ```Partition_H2_SD``` standard error of partitioned SNP-heritability
+- ```Enrichment``` fold of enrichment
+- ```Enrichment_SD``` jackknife standard error of fold of enrichment
+- ```intercept``` confounding bias
+- ```intercept_SD``` standard error of confounding bias
+- ```e.stat``` t-statistics of function enrichment
+- ```P``` P-value of function enrichment (t-test)
+
+#More information
+Author: Zewei Xiong (the University of Hong Kong)
