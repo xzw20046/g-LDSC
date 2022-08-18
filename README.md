@@ -12,7 +12,7 @@ Rscript Install.gLDSC.R
 - GWAS summary statistics
 - Pre-calculated (partitioned) LD score matrix
 - g-LDSC function file
-### GWAS summary statistics
+## GWAS summary statistics
 For GWAS summmary statistics, the required formate is shown as follows:
 ```
 SNP A1 A2 N Z
@@ -21,12 +21,12 @@ rs10000010 T C 361194 -0.850433
 rs1000002 C T 361194 0.672368
 ```
 To convert your GWAS result in such format, you could use ```munge_sumstats.py``` from [ldsc](https://github.com/bulik/ldsc/wiki/Partitioned-Heritability).
-### Pre-calculated LD score matrix
+## Pre-calculated LD score matrix
 This file contains the information of LD matrix and annotation information, to get this file, see tutorial of **Calculate LD score matrix** in the futher section.
-### g-LDSC function file
+## g-LDSC function file
 The R file ```functions.R``` that contain all g-LDSC functions.
 ## Usage
-### Calculate LD score matrix
+## Calculate LD score matrix
 To calculate LD score matrix you could use the command shown as follow:
 ```
 Rscript gldsc.run.R \
@@ -37,6 +37,11 @@ function=mlfun.R \
 out=/your out path/ \
 cores=4
 ```
+- ```LDpath``` This flag tells ```g-LDSC``` which LD matrix files to use in calculating LD score matrix. Under this folder all LD matrixs file should be in ```.hdf5``` format. LD matrix of 1000G and UKBB could be download [here](https://github.com/getian107/PRScsx). 
+- ```annopath``` & ```mafpath``` This two flag give the location of the annotation and MAF of SNPs. The input format here remain the same as ```.annot``` and ```.M_5_50```in  ```ldsc```. Detail see [here](https://github.com/bulik/ldsc/wiki/Partitioned-Heritability).
+- ```out``` This flag tells ```g-LDSC``` where to print the the output.
+- ```cores``` This flag tells ```g-LDSC``` how many cores you would like to use for parallel computing.
 
-
+## Output of LD score matrix calculation
+This function will output a file called ```LDSM.pannel.Rdata```. The size of this output file is approximately 10GB.
 
