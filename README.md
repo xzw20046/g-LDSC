@@ -9,4 +9,16 @@ We need to install all the packages we need in R before we run the tool.
 Rscript Install.gLDSC.R
 ```
 
-## 
+## Input file
+3 files are required to run g-LDSC:
+- GWAS summary statistics
+- Pre-calculated (partitioned) LD score matrix
+- g-LDSC function file
+### GWAS summary statistics
+For GWAS summmary statistics, the required formate is shown as follows:
+```
+SNP A1 A2 N Z
+rs1000000 G A 361194 1.5397
+rs10000010 T C 361194 -0.850433
+rs1000002 C T 361194 0.672368
+```
