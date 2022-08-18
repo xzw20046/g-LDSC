@@ -1,5 +1,5 @@
 # g-LDSC ```V1.0.0```
-g-LDSC is a tool for estimating heritability and functional enrichment from GWAS summary statistics. g-LDSC is written under R-4.1.0. In this tutorial, we would give a tutorial
+g-LDSC is a tool for estimating heritability and functional enrichment from GWAS summary statistics. g-LDSC is written under R-4.1.0. 
 # Tutorial
 g-LDSC is written under R-4.1.0. In this tutorial, we would give a demonstration of how g-LDSC is run under a Linux-based system.
 ## Installation
@@ -26,3 +26,17 @@ This file contains the information of LD matrix and annotation information, to g
 ### g-LDSC function file
 The R file ```functions.R``` that contain all g-LDSC functions.
 ## Usage
+### Calculate LD score matrix
+To calculate LD score matrix you could use the command shown as follow:
+```
+Rscript gldsc.run.R \
+LDpath=ldblk_ukbb_eur \
+annopath=/your file path/baseline \
+mafpath=/your file path/1000G_frq \
+function=mlfun.R \
+out=/your out path/ \
+cores=4
+```
+
+
+
