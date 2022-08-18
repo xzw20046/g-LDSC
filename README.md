@@ -22,3 +22,8 @@ rs1000000 G A 361194 1.5397
 rs10000010 T C 361194 -0.850433
 rs1000002 C T 361194 0.672368
 ```
+### Pre-calculated LD score matrix
+This file contains the information of LD matrix and annotation information, to get this file, see tutorial of **Calculate LD score matrix** in the futher section
+
+### g-LDSC function file
+The R file ```functions.R``` that contain all g-LDSC functions
