@@ -71,5 +71,5 @@ Taus  Partition_H2  Partition_H2_SD  Enrichment  Enrichment_SD  intercept  inter
 - ```e.stat``` t-statistics of function enrichment
 - ```P``` P-value of function enrichment (t-test)
 
-#More information
+# More information
 Author: Zewei Xiong (the University of Hong Kong)
